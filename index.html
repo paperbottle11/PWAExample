@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PWA Example</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="apple-touch-icon" href="/images/unity_editor_icon_192.png">
+        <meta name="description" content="Example of PWA">
+        <meta name="theme-color" content="black">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <h1>Paperbottle11</h1>
+            <img src="/images/dog_general.png" alt="Dog General">
+        </div>
+        <script src="/scripts.js"></script>
+        <script>
+            //If service workers are supported in browser...
+            if("serviceWorker" in navigator){
+                window.addEventListener("load", () => {
+                    //...register the service worker
+                    navigator.serviceWorker.register("/serviceworker.js").then(swReg => {
+                        console.log("Worker Registered!");
+                    }).catch(error => {
+                        console.log("There was an error", error);
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>
