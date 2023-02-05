@@ -17,7 +17,7 @@
     "start_url": "/index.html",
     "background_color": "#3367D6",
     "theme_color": "black",
-    "display": "fullscreen",
+    "display": "standalone",
     "scope": "/",
     "description": "Example of PWA"
 }
