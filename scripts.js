@@ -15,3 +15,19 @@ function notifyMe() {
         });
     }
 }
+
+function sendPushNotificationAndroid() {
+    var payload = {
+      "data": {
+        "title": "Hello",
+        "message": "World"
+      }
+    };
+  
+    var options = {
+      "method": "post",
+      "payload": payload
+    };
+  
+    UrlFetchApp.fetch("https://fcm.googleapis.com/fcm/send", options);
+}
